@@ -1,4 +1,4 @@
-package br.com.igorbag.githubapp.ui.theme
+package br.com.igorbag.githubapp.presentation.theme
 
 import android.app.Activity
 import android.os.Build

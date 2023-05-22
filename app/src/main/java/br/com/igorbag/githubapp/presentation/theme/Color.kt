@@ -1,4 +1,4 @@
-package br.com.igorbag.githubapp.ui.theme
+package br.com.igorbag.githubapp.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 
