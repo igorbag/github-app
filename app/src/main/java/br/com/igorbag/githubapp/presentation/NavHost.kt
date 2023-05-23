@@ -5,6 +5,8 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import br.com.igorbag.githubapp.presentation.features.detail.navigation.DetailNavigation
+import br.com.igorbag.githubapp.presentation.features.detail.navigation.detailGraph
 import br.com.igorbag.githubapp.presentation.features.users.navigation.UsersNavigation
 import br.com.igorbag.githubapp.presentation.features.users.navigation.headsetGraph
 
@@ -19,14 +21,13 @@ fun NavHost(
     ) {
         headsetGraph(
             navigateToDetail = {
-//                navController.navigate("${HeadsetDetailNavigation.route}/$it")
+                navController.navigate("${DetailNavigation.route}/$it")
             },
             nestedGraphs = {
-//                headsetDetailGraph {
-//                    navController.popBackStack()
-//                }
+                detailGraph {
+                    navController.popBackStack()
+                }
             }
         )
-//        composable("detail") { FriendsListScreen(/*...*/) }
     }
 }

@@ -12,12 +12,16 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
+import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import br.com.igorbag.githubapp.domain.model.User
@@ -25,26 +29,35 @@ import br.com.igorbag.githubapp.presentation.theme.SPACING_1
 import br.com.igorbag.githubapp.presentation.theme.SPACING_2
 import coil.compose.AsyncImage
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun UsersScreen(
     users: List<User>, onDetailClick: (String) -> Unit = {}
 ) {
-
-    Column(
-        modifier = Modifier,
-        horizontalAlignment = Alignment.CenterHorizontally,
-    ) {
-        Text(
-            modifier = Modifier.padding(top = SPACING_2),
-            text = "GitHubApp",
-            style = MaterialTheme.typography.labelLarge.copy(color = Color.White),
-        )
-        LazyColumn(Modifier.padding(top = SPACING_2)) {
-            items(users) { user ->
-                UserItem(user, onDetailClick)
+    Scaffold(
+        topBar = {
+            CenterAlignedTopAppBar(
+                title = {
+                    Text(
+                        "GitHubApp",
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis
+                    )
+                },
+            )
+        },
+        content = { innerPadding ->
+            LazyColumn(
+                contentPadding = innerPadding,
+                verticalArrangement = Arrangement.spacedBy(8.dp),
+                modifier = Modifier.padding(top = SPACING_2)
+            ) {
+                items(users) { user ->
+                    UserItem(user, onDetailClick)
+                }
             }
         }
-    }
+    )
 }
 
 @Composable
@@ -74,7 +87,6 @@ private fun UserItem(
                     model = user.avatarUrl
                 )
             }
-
             Column(
                 verticalArrangement = Arrangement.Center,
                 modifier = Modifier.Companion.align(Alignment.Center),

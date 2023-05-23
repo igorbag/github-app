@@ -13,10 +13,10 @@ class UserViewModel(
 ) : BaseViewModel<UsersState, UserAction>(UsersState()) {
 
     init {
-        getHeadsets()
+        getUsers()
     }
 
-    private fun getHeadsets() = viewModelScope.launch {
+    fun getUsers() = viewModelScope.launch {
         setState { copy(loading = true) }
         runCatching(dispatcher = Dispatchers.Default, execute = {
             getAllUsersUseCase()
