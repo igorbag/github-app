@@ -6,6 +6,11 @@
 - Coroutines
 - Jetpack (ViewModel, Navigation) e Material Design.
 
+## Imagens
+![image](https://github.com/igorbag/github-app/assets/5827265/0aa41a51-8be0-4c8f-bcdd-f0991f179c23)
+![image](https://github.com/igorbag/github-app/assets/5827265/38336123-8637-4038-97af-75633ddd247a)
+
+
 ## Tecnologia e bibliotecas de código aberto
 
 - **Baseado em Kotlin, Coroutines para controle de thread's.**
