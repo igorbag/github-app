@@ -7,8 +7,9 @@
 - Jetpack (ViewModel, Navigation) e Material Design.
 
 ## Imagens
-![image](https://github.com/igorbag/github-app/assets/5827265/0aa41a51-8be0-4c8f-bcdd-f0991f179c23)
-![image](https://github.com/igorbag/github-app/assets/5827265/38336123-8637-4038-97af-75633ddd247a)
+![1](https://github.com/igorbag/github-app/assets/5827265/692e9f19-2cab-452d-84c9-4da282815a94)
+![2](https://github.com/igorbag/github-app/assets/5827265/ef1bab3e-98f7-4e26-8693-225a42fc9f37)
+
 
 
 ## Tecnologia e bibliotecas de código aberto
